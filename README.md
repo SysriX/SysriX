@@ -50,6 +50,10 @@ Z=/boot/config/plugins/community.applications/private/sysrix; mkdir -p $Z; for p
 
 Jedes Paket baut auf einem offiziellen Image auf und wird automatisch neu gebaut, sobald es dort ein Update gibt. Unraid zeigt dann „Update verfügbar“.
 
-### Hilfe
+## Home Assistant
+
+Integrationen, Dashboard-Karten und Themes zum Installieren über **HACS** – folgen in Kürze.
+
+## Hilfe
 
 Fragen und Fehler bitte als GitHub-Issue im Repository des jeweiligen Pakets.
