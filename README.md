@@ -1,59 +1,95 @@
-## Unraid-Pakete
+<p align="center">
+  <img src="assets/banner.svg" alt="SysriX – Selbst gehostet, sauber verpackt" width="100%">
+</p>
 
-Docker-Container für **Unraid**: installierbar über Community Applications und automatisch aktuell gehalten. Jedes Paket hat ein eigenes Repository mit Quellcode, Anleitung und Unraid-Vorlage.
+<p align="center">
+  <a href="#unraid-pakete"><img src="https://img.shields.io/badge/Unraid-3_Pakete-3ddc84?style=for-the-badge&labelColor=1f2a37" alt="Unraid: 3 Pakete"></a>
+  <a href="#home-assistant"><img src="https://img.shields.io/badge/Home_Assistant-in_Arbeit-64b5f6?style=for-the-badge&labelColor=1f2a37" alt="Home Assistant: in Arbeit"></a>
+  <img src="https://img.shields.io/badge/Lizenz-MIT-9fb3c8?style=for-the-badge&labelColor=1f2a37" alt="Lizenz MIT">
+</p>
 
-| | Paket | Was es macht |
-| --- | --- | --- |
-| <img src="https://raw.githubusercontent.com/SysriX/haproxy_unraid/main/icon.svg" width="40"> | [**haproxy-unraid**](https://github.com/SysriX/haproxy_unraid) | Reverse-Proxy für außen und innen: verteilt Anfragen nach Name an die Dienste, beendet TLS oder reicht verschlüsselt durch, wehrt Scanner und Passwort-Raten ab. Änderungen werden geprüft übernommen und springen bei Fehlern zurück. |
-| <img src="https://raw.githubusercontent.com/SysriX/haproxy-ui_unraid/main/icon.svg" width="40"> | [**haproxy-ui**](https://github.com/SysriX/haproxy-ui_unraid) | Weboberfläche für haproxy-unraid: Dienste und Dateien bearbeiten, mit einem Klick prüfen und übernehmen, Live-Statistik und Zertifikats-Laufzeiten. Optional Meldung an Home Assistant per MQTT. |
-| <img src="https://raw.githubusercontent.com/SysriX/certwarden_unraid/main/icon.svg" width="40"> | [**certwarden-unraid**](https://github.com/SysriX/certwarden_unraid) | Let's-Encrypt-Zertifikate mit Weboberfläche (Cert Warden), automatisch erneuert. Legt sie auf eine Unraid-Freigabe, damit andere Container sie nutzen können; STRATO und Hetzner per DNS-01. |
+<p align="center">
+  Eigene Bausteine fürs selbst gehostete Zuhause – jedes Projekt in einem eigenen Repository<br>
+  mit Quellcode, Anleitung und automatischen Updates. Hier ist das Inhaltsverzeichnis.
+</p>
 
-### Zusammenspiel
+<br>
 
-certwarden-unraid und haproxy-unraid laufen jeweils allein; haproxy-ui nur zusammen mit haproxy-unraid.
+<a id="unraid-pakete"></a>
+<img src="assets/abschnitt-unraid.svg" alt="Unraid-Pakete" width="100%">
 
-```
-          Internet / LAN
-                │ 80/443
-        ┌───────▼────────┐  Aufträge   ┌──────────────┐
-        │ haproxy-unraid │◄────────────│  haproxy-ui  │──MQTT──► Home Assistant
-        └───────▲────────┘  Statistik  └──────────────┘
-                │ Zertifikate (API)
-       ┌────────┴──────────┐
-       │ certwarden-unraid │──► Freigabe „zertifikate“ ──► andere Container
-       └───────────────────┘
-```
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/haproxy_unraid"><img src="https://raw.githubusercontent.com/SysriX/haproxy_unraid/main/icon.svg" width="56" align="left" alt=""></a>
+      <b><a href="https://github.com/SysriX/haproxy_unraid">haproxy-unraid</a></b><br>
+      <sub>Reverse-Proxy</sub>
+      <br clear="left"><br>
+      Eingang für außen und innen: verteilt nach Name, beendet TLS oder reicht durch, wehrt Scanner ab. Änderungen werden geprüft und springen bei Fehlern zurück.
+      <br><br>
+      <a href="https://github.com/SysriX/haproxy_unraid/actions/workflows/image.yml"><img src="https://github.com/SysriX/haproxy_unraid/actions/workflows/image.yml/badge.svg" alt="Build"></a>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/haproxy-ui_unraid"><img src="https://raw.githubusercontent.com/SysriX/haproxy-ui_unraid/main/icon.svg" width="56" align="left" alt=""></a>
+      <b><a href="https://github.com/SysriX/haproxy-ui_unraid">haproxy-ui</a></b><br>
+      <sub>Weboberfläche</sub>
+      <br clear="left"><br>
+      HAProxy im Browser pflegen: Dienste und Dateien bearbeiten, mit einem Klick prüfen und übernehmen, Live-Statistik, Meldung an Home Assistant per MQTT.
+      <br><br>
+      <a href="https://github.com/SysriX/haproxy-ui_unraid/actions/workflows/image.yml"><img src="https://github.com/SysriX/haproxy-ui_unraid/actions/workflows/image.yml/badge.svg" alt="Build"></a>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/certwarden_unraid"><img src="https://raw.githubusercontent.com/SysriX/certwarden_unraid/main/icon.svg" width="56" align="left" alt=""></a>
+      <b><a href="https://github.com/SysriX/certwarden_unraid">certwarden-unraid</a></b><br>
+      <sub>Zertifikate</sub>
+      <br clear="left"><br>
+      Let's-Encrypt mit Weboberfläche, automatisch erneuert. DNS-01 für STRATO und Hetzner, Ablage auf eine Unraid-Freigabe für andere Container.
+      <br><br>
+      <a href="https://github.com/SysriX/certwarden_unraid/actions/workflows/image.yml"><img src="https://github.com/SysriX/certwarden_unraid/actions/workflows/image.yml/badge.svg" alt="Build"></a>
+    </td>
+  </tr>
+</table>
 
-### Mindestvoraussetzungen
+<details>
+<summary><b>Installieren in Unraid</b></summary>
+<br>
 
-- Unraid mit Docker und dem Plugin **Community Applications**
-- ein benutzerdefiniertes Docker-Netz (z. B. `br0` oder ein VLAN) und je Container eine **freie feste IP**
-- Prozessor **x86-64** (amd64)
-
-| Paket | braucht zusätzlich | optional |
-| --- | --- | --- |
-| **haproxy-unraid** | ein Statistik-Passwort; für Zugriff von außen: Weiterleitung von Port 80/443 in der Firewall auf die IP von HAProxy | certwarden-unraid für automatische Zertifikate (sonst eigene Zertifikate), Syslog-Empfänger für Zugriffslogs |
-| **haproxy-ui** | **haproxy-unraid** läuft, mit demselben appdata-Ordner; IP von haproxy-ui in dessen Liste interner Netze | MQTT-Broker und Home Assistant |
-| **certwarden-unraid** | eigene Domain; entweder DNS bei STRATO/Hetzner (DNS-01) oder Port 80 von außen erreichbar (HTTP-01, z. B. über haproxy-unraid) | Unraid-Freigabe für die Ablage der Zertifikate |
-
-### Installieren
-
-Bis die Pakete offiziell in Community Applications stehen: alle drei Vorlagen auf einmal holen (Unraid-Konsole) …
+Bis die Pakete offiziell in Community Applications stehen, die Vorlagen einmal in der Unraid-Konsole holen:
 
 ```bash
 Z=/boot/config/plugins/community.applications/private/sysrix; mkdir -p $Z; for p in haproxy_unraid:haproxy-unraid haproxy-ui_unraid:haproxy-ui certwarden_unraid:certwarden-unraid; do curl -fsSL https://raw.githubusercontent.com/SysriX/${p%%:*}/main/templates/${p##*:}.xml -o $Z/${p##*:}.xml && echo "${p##*:} ok"; done
 ```
 
-… oder nur eine einzelne – der Befehl steht in der Anleitung des jeweiligen Pakets. Danach in Unraid unter **Apps › Private** installieren und die Felder ausfüllen.
+Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellungen stehen in der Anleitung des jeweiligen Pakets.
+</details>
 
-### Updates
+<br>
 
-Jedes Paket baut auf einem offiziellen Image auf und wird automatisch neu gebaut, sobald es dort ein Update gibt. Unraid zeigt dann „Update verfügbar“.
+<a id="home-assistant"></a>
+<img src="assets/abschnitt-homeassistant.svg" alt="Home Assistant" width="100%">
 
-## Home Assistant
+<table>
+  <tr>
+    <td valign="top">
+      <b>Bald hier</b><br>
+      <sub>Integrationen · Dashboard-Karten · Themes</sub>
+      <br><br>
+      Eigene Integrationen und Karten für Home Assistant, jeweils als eigenes Repository und über <b>HACS</b> installierbar – mit einem Klick auf „Open in HACS“.
+    </td>
+  </tr>
+</table>
 
-Integrationen, Dashboard-Karten und Themes zum Installieren über **HACS** – folgen in Kürze.
+<details>
+<summary><b>Installieren über HACS</b></summary>
+<br>
 
-## Hilfe
+1. In HACS oben rechts **⋮ › Benutzerdefinierte Repositories**
+2. Adresse des Repositorys eintragen und den Typ wählen (Integration, Dashboard oder Theme)
+3. Herunterladen, Home Assistant neu starten, unter **Einstellungen › Geräte & Dienste** hinzufügen
+</details>
 
-Fragen und Fehler bitte als GitHub-Issue im Repository des jeweiligen Pakets.
+<br>
+
+<p align="center">
+  <sub>Fragen und Fehler bitte als GitHub-Issue im jeweiligen Repository.</sub>
+</p>

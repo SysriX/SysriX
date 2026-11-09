@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" width="1280" height="300" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d141d"/>
+      <stop offset="1" stop-color="#1f2a37"/>
+    </linearGradient>
+    <linearGradient id="akzent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3ddc84"/>
+      <stop offset="1" stop-color="#64b5f6"/>
+    </linearGradient>
+    <pattern id="punkte" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#9fb3c8" opacity=".12"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="300" rx="22" fill="url(#bg)"/>
+  <rect width="1280" height="300" rx="22" fill="url(#punkte)"/>
+
+  <!-- Text -->
+  <text x="72" y="132" font-size="78" font-weight="700" fill="#e8eef5" letter-spacing="1">SysriX</text>
+  <rect x="74" y="152" width="140" height="6" rx="3" fill="url(#akzent)"/>
+  <text x="72" y="206" font-size="28" fill="#c3d0dd">Selbst gehostet – sauber verpackt.</text>
+  <text x="72" y="246" font-size="20" fill="#8c9aa9">Unraid-Container  ·  Home-Assistant-Integrationen  ·  Dashboard-Karten</text>
+
+  <!-- Netz: Server – Haus – Schild -->
+  <g stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M905 150 L1040 92 M905 150 L1040 212 M1040 92 L1170 150 M1040 212 L1170 150 M1040 92 L1040 212" stroke="#9fb3c8" stroke-width="3" opacity=".35" stroke-dasharray="2 9"/>
+  </g>
+
+  <!-- Server -->
+  <g transform="translate(860 105)">
+    <rect width="90" height="90" rx="18" fill="#1f2a37" stroke="#2f3d4d" stroke-width="2"/>
+    <rect x="20" y="22" width="50" height="16" rx="4" fill="none" stroke="#9fb3c8" stroke-width="4"/>
+    <rect x="20" y="52" width="50" height="16" rx="4" fill="none" stroke="#9fb3c8" stroke-width="4"/>
+    <circle cx="30" cy="30" r="3" fill="#3ddc84"/><circle cx="30" cy="60" r="3" fill="#3ddc84"/>
+  </g>
+  <!-- Haus -->
+  <g transform="translate(995 47)">
+    <rect width="90" height="90" rx="18" fill="#1f2a37" stroke="#2f3d4d" stroke-width="2"/>
+    <path d="M22 46 L45 25 L68 46 V68 H22 Z" fill="none" stroke="#3ddc84" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="45" cy="52" r="5" fill="#64b5f6"/>
+  </g>
+  <!-- Schild -->
+  <g transform="translate(995 167)">
+    <rect width="90" height="90" rx="18" fill="#1f2a37" stroke="#2f3d4d" stroke-width="2"/>
+    <path d="M45 18 L68 27 V44 C68 60 58 70 45 76 C32 70 22 60 22 44 V27 Z" fill="none" stroke="#64b5f6" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M35 46 L43 54 L57 38" fill="none" stroke="#3ddc84" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Proxy -->
+  <g transform="translate(1125 105)">
+    <rect width="90" height="90" rx="18" fill="#1f2a37" stroke="#2f3d4d" stroke-width="2"/>
+    <path d="M18 45h16M56 28h16M56 45h16M56 62h16" stroke="#9fb3c8" stroke-width="4" stroke-linecap="round"/>
+    <path d="M34 45c9 0 9-17 22-17M34 45h22M34 45c9 0 9 17 22 17" fill="none" stroke="#3ddc84" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="34" cy="45" r="6" fill="#3ddc84"/>
+  </g>
+</svg>
