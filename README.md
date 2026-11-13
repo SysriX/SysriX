@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="#unraid-pakete"><img src="https://img.shields.io/badge/Unraid-3_Pakete-3ddc84?style=for-the-badge&labelColor=1f2a37" alt="Unraid: 3 Pakete"></a>
+  <a href="#unraid-pakete"><img src="https://img.shields.io/badge/Unraid-4_Pakete-3ddc84?style=for-the-badge&labelColor=1f2a37" alt="Unraid: 4 Pakete"></a>
   <a href="#home-assistant"><img src="https://img.shields.io/badge/Home_Assistant-in_Arbeit-64b5f6?style=for-the-badge&labelColor=1f2a37" alt="Home Assistant: in Arbeit"></a>
   <img src="https://img.shields.io/badge/Lizenz-MIT-9fb3c8?style=for-the-badge&labelColor=1f2a37" alt="Lizenz MIT">
 </p>
@@ -48,6 +48,19 @@
       <a href="https://github.com/SysriX/certwarden_unraid/actions/workflows/image.yml"><img src="https://github.com/SysriX/certwarden_unraid/actions/workflows/image.yml/badge.svg" alt="Build"></a>
     </td>
   </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/mira_unraid"><img src="https://raw.githubusercontent.com/SysriX/mira_unraid/main/icon.svg" width="56" align="left" alt=""></a>
+      <b><a href="https://github.com/SysriX/mira_unraid">MIRA</a></b><br>
+      <sub>Admin-Zentrale</sub>
+      <br clear="left"><br>
+      Mail · Identity · Routing · Access: AD/Samba, Authentik, HAProxy, nginx, grommunio und Exchange aus einer Oberfläche – neuer Mitarbeiter in einem Rutsch.
+      <br><br>
+      <a href="https://github.com/SysriX/mira_unraid/actions/workflows/image.yml"><img src="https://github.com/SysriX/mira_unraid/actions/workflows/image.yml/badge.svg" alt="Build"></a>
+    </td>
+    <td width="33%"></td>
+    <td width="33%"></td>
+  </tr>
 </table>
 
 <details>
@@ -57,7 +70,7 @@
 Bis die Pakete offiziell in Community Applications stehen, die Vorlagen einmal in der Unraid-Konsole holen:
 
 ```bash
-Z=/boot/config/plugins/community.applications/private/sysrix; mkdir -p $Z; for p in haproxy_unraid:haproxy-unraid haproxy-ui_unraid:haproxy-ui certwarden_unraid:certwarden-unraid; do curl -fsSL https://raw.githubusercontent.com/SysriX/${p%%:*}/main/templates/${p##*:}.xml -o $Z/${p##*:}.xml && echo "${p##*:} ok"; done
+Z=/boot/config/plugins/community.applications/private/sysrix; mkdir -p $Z; for p in haproxy_unraid:haproxy-unraid haproxy-ui_unraid:haproxy-ui certwarden_unraid:certwarden-unraid mira_unraid:mira; do curl -fsSL https://raw.githubusercontent.com/SysriX/${p%%:*}/main/templates/${p##*:}.xml -o $Z/${p##*:}.xml && echo "${p##*:} ok"; done
 ```
 
 Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellungen stehen in der Anleitung des jeweiligen Pakets.
