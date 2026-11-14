@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="#unraid-pakete"><img src="https://img.shields.io/badge/Unraid-4_Pakete-3ddc84?style=for-the-badge&labelColor=1f2a37" alt="Unraid: 4 Pakete"></a>
-  <a href="#home-assistant"><img src="https://img.shields.io/badge/Home_Assistant-33_Repos-64b5f6?style=for-the-badge&labelColor=1f2a37" alt="Home Assistant: 33 Repos"></a>
+  <a href="#home-assistant"><img src="https://img.shields.io/badge/Home_Assistant-40_Repos-64b5f6?style=for-the-badge&labelColor=1f2a37" alt="Home Assistant: 40 Repos"></a>
   <img src="https://img.shields.io/badge/Lizenz-MIT-9fb3c8?style=for-the-badge&labelColor=1f2a37" alt="Lizenz MIT">
 </p>
 
@@ -86,6 +86,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
 <table>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/alarm_system_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/alarm_system_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/alarm_system_ha_integration">Alarm System</a></b><br>
       <sub>alarm_system_ha_integration · v1.2.0</sub>
       <br><br>
@@ -94,6 +95,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=alarm_system_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/presence_simulation_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/presence_simulation_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/presence_simulation_ha_integration">Presence Simulation</a></b><br>
       <sub>presence_simulation_ha_integration · v1.2.0</sub>
       <br><br>
@@ -102,6 +104,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=presence_simulation_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/heat_control_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/heat_control_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/heat_control_ha_integration">Heat Control</a></b><br>
       <sub>heat_control_ha_integration · v1.0.0</sub>
       <br><br>
@@ -112,6 +115,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
   </tr>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/light_lux_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/light_lux_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/light_lux_ha_integration">Light Lux Control</a></b><br>
       <sub>light_lux_ha_integration · v1.3.0</sub>
       <br><br>
@@ -120,6 +124,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=light_lux_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/light_schedule_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/light_schedule_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/light_schedule_ha_integration">Light Schedule</a></b><br>
       <sub>light_schedule_ha_integration · v1.4.0</sub>
       <br><br>
@@ -128,6 +133,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=light_schedule_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/vent_control_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/vent_control_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/vent_control_ha_integration">Ventilation Control</a></b><br>
       <sub>vent_control_ha_integration · v1.2.0</sub>
       <br><br>
@@ -138,6 +144,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
   </tr>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/access_monitor_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/access_monitor_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/access_monitor_ha_integration">Access Monitor</a></b><br>
       <sub>access_monitor_ha_integration · v1.0.0</sub>
       <br><br>
@@ -146,6 +153,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=access_monitor_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/battery_manager_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/battery_manager_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/battery_manager_ha_integration">Battery Manager</a></b><br>
       <sub>battery_manager_ha_integration · v2.4.0</sub>
       <br><br>
@@ -154,6 +162,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=battery_manager_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/home_twin_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/home_twin_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/home_twin_ha_integration">Home Twin</a></b><br>
       <sub>home_twin_ha_integration · v0.6.0</sub>
       <br><br>
@@ -164,6 +173,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
   </tr>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/waste_duty_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/waste_duty_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/waste_duty_ha_integration">Waste Duty</a></b><br>
       <sub>waste_duty_ha_integration · v1.0.0</sub>
       <br><br>
@@ -172,6 +182,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=waste_duty_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/ring_intercom_talk_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/ring_intercom_talk_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/ring_intercom_talk_ha_integration">Ring Intercom Talk</a></b><br>
       <sub>ring_intercom_talk_ha_integration · v0.1.0</sub>
       <br><br>
@@ -180,6 +191,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=ring_intercom_talk_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/washer_control_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/washer_control_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/washer_control_ha_integration">Washer Control</a></b><br>
       <sub>washer_control_ha_integration · v1.1.1</sub>
       <br><br>
@@ -190,6 +202,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
   </tr>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/alarm_clock_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/alarm_clock_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/alarm_clock_ha_integration">Alarm Clock &amp; Bed</a></b><br>
       <sub>alarm_clock_ha_integration · v1.4.0</sub>
       <br><br>
@@ -207,6 +220,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
 <table>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/room_panel_ha_card"><img src="https://raw.githubusercontent.com/SysriX/room_panel_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/room_panel_ha_card">Room Panel</a></b><br>
       <sub>room_panel_ha_card · v2.106.0-beta.1</sub>
       <br><br>
@@ -215,6 +229,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=room_panel_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/room_tablet_ha_card"><img src="https://raw.githubusercontent.com/SysriX/room_tablet_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/room_tablet_ha_card">Room Tablet Card</a></b><br>
       <sub>room_tablet_ha_card · v1.21.10</sub>
       <br><br>
@@ -223,6 +238,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=room_tablet_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/hallway_weather_ha_card"><img src="https://raw.githubusercontent.com/SysriX/hallway_weather_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/hallway_weather_ha_card">Hallway Weather Card</a></b><br>
       <sub>hallway_weather_ha_card · v1.4.1</sub>
       <br><br>
@@ -233,6 +249,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
   </tr>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/floor_plan_ha_card"><img src="https://raw.githubusercontent.com/SysriX/floor_plan_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/floor_plan_ha_card">Floor Plan Card (Home Twin)</a></b><br>
       <sub>floor_plan_ha_card · v2.33.1-beta.1</sub>
       <br><br>
@@ -241,6 +258,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=floor_plan_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/battery_manager_ha_card"><img src="https://raw.githubusercontent.com/SysriX/battery_manager_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/battery_manager_ha_card">Battery Manager Card</a></b><br>
       <sub>battery_manager_ha_card · v2.5.3</sub>
       <br><br>
@@ -249,6 +267,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=battery_manager_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/ble_pairing_ha_card"><img src="https://raw.githubusercontent.com/SysriX/ble_pairing_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/ble_pairing_ha_card">BLE Pairing Card</a></b><br>
       <sub>ble_pairing_ha_card · v1.1.0</sub>
       <br><br>
@@ -259,6 +278,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
   </tr>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/dashboard_view_ha_card"><img src="https://raw.githubusercontent.com/SysriX/dashboard_view_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/dashboard_view_ha_card">Dashboard View Card</a></b><br>
       <sub>dashboard_view_ha_card · v1.1.0</sub>
       <br><br>
@@ -267,6 +287,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=dashboard_view_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/door_window_manager_ha_card"><img src="https://raw.githubusercontent.com/SysriX/door_window_manager_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/door_window_manager_ha_card">Door &amp; Window Manager Card</a></b><br>
       <sub>door_window_manager_ha_card · v1.3.1</sub>
       <br><br>
@@ -275,6 +296,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=door_window_manager_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/home_twin_alarm_ha_card"><img src="https://raw.githubusercontent.com/SysriX/home_twin_alarm_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/home_twin_alarm_ha_card">Home Twin Alarm Card</a></b><br>
       <sub>home_twin_alarm_ha_card · v1.2.1</sub>
       <br><br>
@@ -285,6 +307,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
   </tr>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/home_twin_app_ha_card"><img src="https://raw.githubusercontent.com/SysriX/home_twin_app_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/home_twin_app_ha_card">Home Twin App</a></b><br>
       <sub>home_twin_app_ha_card · v1.0.0</sub>
       <br><br>
@@ -293,6 +316,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=home_twin_app_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/home_twin_ble_ha_card"><img src="https://raw.githubusercontent.com/SysriX/home_twin_ble_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/home_twin_ble_ha_card">Home Twin BLE Cards</a></b><br>
       <sub>home_twin_ble_ha_card · v0.5.0</sub>
       <br><br>
@@ -301,6 +325,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=home_twin_ble_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/leave_arrive_ha_card"><img src="https://raw.githubusercontent.com/SysriX/leave_arrive_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/leave_arrive_ha_card">Leave &amp; Arrive Card</a></b><br>
       <sub>leave_arrive_ha_card · v1.1.2</sub>
       <br><br>
@@ -311,6 +336,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
   </tr>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/kitchen_appliances_ha_card"><img src="https://raw.githubusercontent.com/SysriX/kitchen_appliances_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/kitchen_appliances_ha_card">Kitchen Appliances Card</a></b><br>
       <sub>kitchen_appliances_ha_card · v1.1.1</sub>
       <br><br>
@@ -319,6 +345,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=kitchen_appliances_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/waste_collection_ha_card"><img src="https://raw.githubusercontent.com/SysriX/waste_collection_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/waste_collection_ha_card">Waste Collection Card</a></b><br>
       <sub>waste_collection_ha_card · v1.3.2</sub>
       <br><br>
@@ -327,6 +354,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=waste_collection_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/door_status_ha_card"><img src="https://raw.githubusercontent.com/SysriX/door_status_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/door_status_ha_card">Door Status Card</a></b><br>
       <sub>door_status_ha_card · v1.1.2</sub>
       <br><br>
@@ -337,6 +365,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
   </tr>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/washer_ha_card"><img src="https://raw.githubusercontent.com/SysriX/washer_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/washer_ha_card">Washer Card</a></b><br>
       <sub>washer_ha_card · v1.2.0</sub>
       <br><br>
@@ -345,6 +374,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=washer_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/access_log_ha_card"><img src="https://raw.githubusercontent.com/SysriX/access_log_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/access_log_ha_card">Access Log Card</a></b><br>
       <sub>access_log_ha_card · v1.0.1</sub>
       <br><br>
@@ -353,6 +383,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=access_log_ha_card&amp;category=plugin"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/persons_ha_card"><img src="https://raw.githubusercontent.com/SysriX/persons_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/persons_ha_card">Persons Card</a></b><br>
       <sub>persons_ha_card · v1.2.3</sub>
       <br><br>
@@ -363,6 +394,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
   </tr>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/ring_intercom_talk_ha_card"><img src="https://raw.githubusercontent.com/SysriX/ring_intercom_talk_ha_card/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/ring_intercom_talk_ha_card">Ring Intercom Talk Card</a></b><br>
       <sub>ring_intercom_talk_ha_card · v1.0.0</sub>
       <br><br>
@@ -380,6 +412,7 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
 <table>
   <tr>
     <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/room_tablet_ha_theme"><img src="https://raw.githubusercontent.com/SysriX/room_tablet_ha_theme/main/docs/images/preview.png" width="100%" alt=""></a><br>
       <b><a href="https://github.com/SysriX/room_tablet_ha_theme">Room Tablet Theme</a></b><br>
       <sub>room_tablet_ha_theme · v1.0.0</sub>
       <br><br>
@@ -388,6 +421,78 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=room_tablet_ha_theme&amp;category=theme"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%"></td>
+    <td width="33%"></td>
+  </tr>
+</table>
+
+<h3>YAML packages</h3>
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/light_motion_ha_package"><img src="https://raw.githubusercontent.com/SysriX/light_motion_ha_package/main/docs/images/preview.png" width="100%" alt=""></a><br>
+      <b><a href="https://github.com/SysriX/light_motion_ha_package">Motion Lighting Package for Home Assistant</a></b><br>
+      <sub>light_motion_ha_package · v1.0.0</sub>
+      <br><br>
+      Motion-activated lighting for Home Assistant as YAML packages, generated per room by a Python script
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/ipv64_dyndns_ha_package"><img src="https://raw.githubusercontent.com/SysriX/ipv64_dyndns_ha_package/main/docs/images/preview.png" width="100%" alt=""></a><br>
+      <b><a href="https://github.com/SysriX/ipv64_dyndns_ha_package">ipv64.net DynDNS Package for Home Assistant</a></b><br>
+      <sub>ipv64_dyndns_ha_package · v1.0.0</sub>
+      <br><br>
+      Home Assistant package keeping an ipv64.net DynDNS domain in sync for IPv4 and IPv6, independent of the router
+    </td>
+    <td width="33%"></td>
+  </tr>
+</table>
+
+<h3>ESPHome</h3>
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/bed_heating_esphome"><img src="https://raw.githubusercontent.com/SysriX/bed_heating_esphome/main/docs/images/preview.png" width="100%" alt=""></a><br>
+      <b><a href="https://github.com/SysriX/bed_heating_esphome">Bed Heating – 2 × HYMER 12 V Heated Underblanket with ESP32 / ESPHome</a></b><br>
+      <sub>bed_heating_esphome · v0.1.0</sub>
+      <br><br>
+      ESPHome controller for 2x HYMER 12 V heated underblankets on an ESP32 with over-temp protection (untested)
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/bed_vibration_esphome"><img src="https://raw.githubusercontent.com/SysriX/bed_vibration_esphome/main/docs/images/preview.png" width="100%" alt=""></a><br>
+      <b><a href="https://github.com/SysriX/bed_vibration_esphome">Bed Vibration Alarm (ESP32 + ESPHome)</a></b><br>
+      <sub>bed_vibration_esphome · v0.1.0</sub>
+      <br><br>
+      ESPHome vibration alarm motors per bed side on an ESP32, driven by the alarm_clock (wecker) HA integration
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/ble_indoor_tracking_esphome"><img src="https://raw.githubusercontent.com/SysriX/ble_indoor_tracking_esphome/main/docs/images/preview.png" width="100%" alt=""></a><br>
+      <b><a href="https://github.com/SysriX/ble_indoor_tracking_esphome">BLE Indoor Tracking with ESPHome</a></b><br>
+      <sub>ble_indoor_tracking_esphome · v1.0.0</sub>
+      <br><br>
+      ESPHome BLE proxies, IRK reader and BC021 beacon trackers for room-level indoor tracking in Home Assistant
+    </td>
+  </tr>
+</table>
+
+<h3>Tools</h3>
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/recovery_ha_tool"><img src="https://raw.githubusercontent.com/SysriX/recovery_ha_tool/main/docs/images/preview.png" width="100%" alt=""></a><br>
+      <b><a href="https://github.com/SysriX/recovery_ha_tool">HA Recovery Tool</a></b><br>
+      <sub>recovery_ha_tool · v0.1.0</sub>
+      <br><br>
+      Experimental Node.js backup and restore assistant for self-built Home Assistant parts: files, dashboards, .storage, MariaDB
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/dashboard_viewer_ha_tool"><img src="https://raw.githubusercontent.com/SysriX/dashboard_viewer_ha_tool/main/docs/images/preview.png" width="100%" alt=""></a><br>
+      <b><a href="https://github.com/SysriX/dashboard_viewer_ha_tool">Dashboard Viewer</a></b><br>
+      <sub>dashboard_viewer_ha_tool · v1.0.0</sub>
+      <br><br>
+      Preview all Home Assistant dashboards in an iframe at fixed tablet resolution (2240x1400) with true 14-inch real-size scaling
+    </td>
     <td width="33%"></td>
   </tr>
 </table>
