@@ -227,7 +227,15 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <br><br>
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=nina_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
-    <td width="33%"></td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/pc_idle_shutdown_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/pc_idle_shutdown_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
+      <b><a href="https://github.com/SysriX/pc_idle_shutdown_ha_integration">PC Idle Shutdown</a></b><br>
+      <sub>pc_idle_shutdown_ha_integration · v1.3.0</sub>
+      <br><br>
+      Shut down idle Windows PCs (HASS.Agent .NET10) automatically: rules and templates from the PC's sensors, pause entity, exceptions and shared time windows
+      <br><br>
+      <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=pc_idle_shutdown_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
+    </td>
   </tr>
 </table>
 
