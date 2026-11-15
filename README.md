@@ -59,13 +59,13 @@
       <a href="https://github.com/SysriX/mira_unraid/actions/workflows/image.yml"><img src="https://github.com/SysriX/mira_unraid/actions/workflows/image.yml/badge.svg" alt="Build"></a>
     </td>
     <td width="33%" valign="top">
-      <a href="https://github.com/SysriX/netinventory_unraid"><img src="https://raw.githubusercontent.com/SysriX/netinventory_unraid/main/icon.svg" width="56" align="left" alt=""></a>
-      <b><a href="https://github.com/SysriX/netinventory_unraid">NetInventory</a></b><br>
-      <sub>Geräteliste</sub>
+      <a href="https://github.com/SysriX/nina_unraid"><img src="https://raw.githubusercontent.com/SysriX/nina_unraid/main/icon.svg" width="56" align="left" alt=""></a>
+      <b><a href="https://github.com/SysriX/nina_unraid">NINA</a></b><br>
+      <sub>Network INventory Assistant</sub>
       <br clear="left"><br>
       Netzwerk- und IT-Inventar: Scans in mehreren Netzen, OPNsense ARP/DHCP, Wake-on-LAN, HASS.Agent-Befehle und -Werte, Anbindung an Home Assistant.
       <br><br>
-      <a href="https://github.com/SysriX/netinventory_unraid/actions/workflows/image.yml"><img src="https://github.com/SysriX/netinventory_unraid/actions/workflows/image.yml/badge.svg" alt="Build"></a>
+      <a href="https://github.com/SysriX/nina_unraid/actions/workflows/image.yml"><img src="https://github.com/SysriX/nina_unraid/actions/workflows/image.yml/badge.svg" alt="Build"></a>
     </td>
     <td width="33%"></td>
   </tr>
@@ -78,7 +78,7 @@
 Bis die Pakete offiziell in Community Applications stehen, die Vorlagen einmal in der Unraid-Konsole holen:
 
 ```bash
-Z=/boot/config/plugins/community.applications/private/sysrix; mkdir -p $Z; for p in haproxy_unraid:haproxy-unraid haproxy-ui_unraid:haproxy-ui certwarden_unraid:certwarden-unraid mira_unraid:mira netinventory_unraid:netinventory; do curl -fsSL https://raw.githubusercontent.com/SysriX/${p%%:*}/main/templates/${p##*:}.xml -o $Z/${p##*:}.xml && echo "${p##*:} ok"; done
+Z=/boot/config/plugins/community.applications/private/sysrix; mkdir -p $Z; for p in haproxy_unraid:haproxy-unraid haproxy-ui_unraid:haproxy-ui certwarden_unraid:certwarden-unraid mira_unraid:mira nina_unraid:nina; do curl -fsSL https://raw.githubusercontent.com/SysriX/${p%%:*}/main/templates/${p##*:}.xml -o $Z/${p##*:}.xml && echo "${p##*:} ok"; done
 ```
 
 Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellungen stehen in der Anleitung des jeweiligen Pakets.
@@ -219,13 +219,13 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=alarm_clock_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%" valign="top">
-      <a href="https://github.com/SysriX/netinventory_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/netinventory_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
-      <b><a href="https://github.com/SysriX/netinventory_ha_integration">NetInventory</a></b><br>
-      <sub>netinventory_ha_integration · v1.0.0</sub>
+      <a href="https://github.com/SysriX/nina_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/nina_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
+      <b><a href="https://github.com/SysriX/nina_ha_integration">NINA</a></b><br>
+      <sub>nina_ha_integration · v1.0.0</sub>
       <br><br>
-      Devices of the NetInventory container in Home Assistant: online state, IP/MAC, user, HASS.Agent sensors, Wake-on-LAN and commands (zeroconf discovery)
+      Devices of the NINA container (Network INventory Assistant) in Home Assistant: online state, IP/MAC, user, HASS.Agent sensors, Wake-on-LAN and commands (zeroconf discovery)
       <br><br>
-      <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=netinventory_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
+      <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=nina_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
     <td width="33%"></td>
   </tr>
