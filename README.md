@@ -237,6 +237,17 @@ Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellunge
       <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=pc_idle_shutdown_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
     </td>
   </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SysriX/terrarium_ha_integration"><img src="https://raw.githubusercontent.com/SysriX/terrarium_ha_integration/main/docs/images/preview.png" width="100%" alt=""></a><br>
+      <b><a href="https://github.com/SysriX/terrarium_ha_integration">Terrarium</a></b><br>
+      <sub>terrarium_ha_integration · v1.0.0</sub>
+      <br><br>
+      Terrarium enclosures with freely placed terrariums, temperature/humidity limits, push notifications, sidebar panel with model view
+      <br><br>
+      <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=SysriX&amp;repository=terrarium_ha_integration&amp;category=integration"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="28" alt="Open in HACS"></a>
+    </td>
+  </tr>
 </table>
 
 <h3>Dashboard cards</h3>
