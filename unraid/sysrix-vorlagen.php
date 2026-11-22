@@ -112,9 +112,21 @@ function findToken(): array {
 // ---------- HTTP ----------
 function http(string $url, string $accept = 'application/vnd.github+json'): array {
     global $TOKEN;
-    $h = "User-Agent: sysrix-vorlagen\r\nAccept: $accept\r\nX-GitHub-Api-Version: 2022-11-28\r\n";
-    if ($TOKEN !== '' && str_starts_with($url, 'https://api.github.com/')) $h .= "Authorization: Bearer $TOKEN\r\n";
-    $ctx = stream_context_create(['http' => ['header' => $h, 'timeout' => 30, 'ignore_errors' => true]]);
+    $hdr = ['User-Agent: sysrix-vorlagen', "Accept: $accept", 'X-GitHub-Api-Version: 2022-11-28', 'Connection: close'];
+    if ($TOKEN !== '' && str_starts_with($url, 'https://api.github.com/')) $hdr[] = "Authorization: Bearer $TOKEN";
+    if (function_exists('curl_init')) {                  // bevorzugt: feste Zeitgrenzen, IPv4 (kein Hängen an IPv6)
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_FOLLOWLOCATION => true, CURLOPT_MAXREDIRS => 5,
+            CURLOPT_CONNECTTIMEOUT => 10, CURLOPT_TIMEOUT => 30, CURLOPT_HTTPHEADER => $hdr,
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4]);
+        $body = curl_exec($ch);
+        $code = (int)curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+        if ($body === false) warn('Abruf fehlgeschlagen: ' . preg_replace('/\?.*$/', '', $url) . ' – ' . curl_error($ch));
+        curl_close($ch);
+        return [$code, $body === false ? '' : (string)$body];
+    }
+    $ctx = stream_context_create(['http' => ['header' => implode("\r\n", $hdr) . "\r\n", 'timeout' => 30,
+        'ignore_errors' => true, 'protocol_version' => 1.1]]);
     $body = @file_get_contents($url, false, $ctx);
     $headers = function_exists('http_get_last_response_headers') ? (http_get_last_response_headers() ?? []) : ($http_response_header ?? []);
     $code = 0;
@@ -251,12 +263,14 @@ foreach ($repos as $name => $r) {
     if ($TOKEN === '' && !str_ends_with($name, '_unraid')) continue;   // Abruf-Grenze ohne Anmeldung schonen
     $branch = $r['default_branch'] ?? 'main';
     $priv = !empty($r['private']);
+    if (!$QUIET) echo "  $name … ";
     [$c, $b] = http('https://api.github.com/repos/' . OWNER . "/$name/contents/templates?ref=" . rawurlencode($branch));
+    if (!$QUIET) echo $c === 404 ? "keine Vorlagen\n" : ($c === 200 ? "Vorlagen\n" : "HTTP $c\n");
     if ($c === 404) continue;
     if ($c !== 200) { warn("$name: Ordner templates nicht abrufbar (HTTP $c)"); $listOk = false; continue; }
     foreach (json_decode($b, true) ?: [] as $f) {
         if (($f['type'] ?? '') !== 'file' || !preg_match('/\.xml$/i', $f['name'])) continue;
-        if ($priv || empty($f['download_url'])) {
+        if ($priv || $TOKEN !== '' || empty($f['download_url'])) {   // mit Token alles über api.github.com
             [$c2, $xml] = http('https://api.github.com/repos/' . OWNER . "/$name/contents/templates/" . rawurlencode($f['name']) . '?ref=' . rawurlencode($branch), 'application/vnd.github.raw');
         } else {
             [$c2, $xml] = http($f['download_url'], '*/*');
