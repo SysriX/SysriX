@@ -285,13 +285,19 @@ foreach ($repos as $name => $r) {
 info(count($templates) . ' Vorlagen gefunden.');
 if (!$templates) { warn('Nichts zu tun.'); exit(1); }
 
-// ---------- Symbole privater Repositories zwischenspeichern ----------
+// ---------- Symbole aller Vorlagen zwischenspeichern ----------
+// iconFile: lokale Kopie (für den Docker-Symbol-Cache); iconPrivate: Symbol liegt in einem privaten Repo,
+// der Browser kommt also nicht heran → CA bekommt die lokale Kopie über /plugins/sysrix-vorlagen/icons.
 foreach ($templates as &$t) {
     $t['iconFile'] = '';
-    if (!$t['private'] || $t['icon'] === '') continue;
+    $t['iconPrivate'] = false;
+    if ($t['icon'] === '') continue;
     $ext = strtolower(pathinfo(parse_url($t['icon'], PHP_URL_PATH) ?? '', PATHINFO_EXTENSION)) ?: 'png';
     $local = ICON_DIR . '/' . preg_replace('/\.xml$/i', '', $t['file']) . '.' . $ext;
-    if (preg_match('#^https://raw\.githubusercontent\.com/' . OWNER . '/([^/]+)/([^/]+)/(.+)$#i', $t['icon'], $m)) {
+    $m = [];
+    $rawGh = preg_match('#^https://raw\.githubusercontent\.com/' . OWNER . '/([^/]+)/([^/]+)/(.+)$#i', $t['icon'], $m);
+    foreach ($repos as $rn => $ri) if ($rawGh && strcasecmp($rn, $m[1]) === 0 && !empty($ri['private'])) $t['iconPrivate'] = true;
+    if ($t['iconPrivate']) {
         [$c, $data] = http('https://api.github.com/repos/' . OWNER . "/{$m[1]}/contents/" . str_replace('%2F', '/', rawurlencode($m[3])) . '?ref=' . rawurlencode($m[2]), 'application/vnd.github.raw');
     } else {
         [$c, $data] = http($t['icon'], '*/*');
@@ -312,7 +318,7 @@ if (!$DRY) publishIcons();
 $caWritten = [];
 foreach ($templates as $t) {
     $d = loadXml($t['dom']->saveXML());
-    if ($t['iconFile'] !== '') {                          // Browser kommt an private GitHub-Dateien nicht heran
+    if ($t['iconPrivate'] && $t['iconFile'] !== '') {     // Browser kommt an private GitHub-Dateien nicht heran
         $ic = kids($d->documentElement, 'Icon')[0] ?? null;
         if ($ic) $ic->nodeValue = ICON_WEB . '/' . basename($t['iconFile']);
     }
@@ -385,7 +391,7 @@ $dirs = glob(BASE . '/sicherung/*', GLOB_ONLYDIR) ?: [];
 sort($dirs);
 foreach (array_slice($dirs, 0, max(0, count($dirs) - 15)) as $old) if (!$DRY) { array_map('unlink', glob("$old/*") ?: []); @rmdir($old); }
 
-// ---------- Symbole im Docker-Tab (privat: Unraid kann sie nicht selbst laden) ----------
+// ---------- Symbole im Docker-Tab: Unraid merkt sich einen fehlgeschlagenen Abruf für immer → Cache selbst füllen ----------
 if (is_dir(DOCKER_ICON_DIR) && !$DRY) {
     foreach (glob(USER_DIR . '/*.xml') ?: [] as $f) {
         $d = loadXml((string)file_get_contents($f));
@@ -395,8 +401,8 @@ if (is_dir(DOCKER_ICON_DIR) && !$DRY) {
             if ($t['iconFile'] === '' || $t['url'] !== $url || !preg_match('/\.png$/i', $t['iconFile'])) continue;
             $dst = DOCKER_ICON_DIR . '/' . field($d, 'Name') . '-icon.png';
             if (isImage($dst) && md5_file($dst) === md5_file($t['iconFile'])) continue;
-            @copy($t['iconFile'], $dst);
-            @unlink(DOCKER_ICON_RAM . '/' . field($d, 'Name') . '-icon.png');
+            if (@copy($t['iconFile'], $dst)) note('Symbol erneuert:      ' . field($d, 'Name'));
+            @unlink(DOCKER_ICON_RAM . '/' . field($d, 'Name') . '-icon.png');   // RAM-Kopie baut Unraid daraus neu
         }
     }
 }
