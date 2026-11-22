@@ -75,11 +75,13 @@
 <summary><b>Installieren in Unraid</b></summary>
 <br>
 
-Bis die Pakete offiziell in Community Applications stehen, die Vorlagen einmal in der Unraid-Konsole holen:
+Bis die Pakete offiziell in Community Applications stehen, einmal in der Unraid-Konsole ausführen:
 
 ```bash
-Z=/boot/config/plugins/community.applications/private/sysrix; mkdir -p $Z; for p in haproxy_unraid:haproxy-unraid haproxy-ui_unraid:haproxy-ui certwarden_unraid:certwarden-unraid mira_unraid:mira nina_unraid:nina; do curl -fsSL https://raw.githubusercontent.com/SysriX/${p%%:*}/main/templates/${p##*:}.xml -o $Z/${p##*:}.xml && echo "${p##*:} ok"; done
+curl -fsSL https://raw.githubusercontent.com/SysriX/SysriX/main/unraid/vorlagen.sh | bash -s -- --einrichten
 ```
+
+Das holt die Vorlagen aller SysriX-Repositories (Ordner `templates/`) nach **Apps › Private** und als Benutzer-Vorlage nach **Docker › Container hinzufügen**. Vorhandene werden nur bei Änderungen aktualisiert – eigene Werte bleiben, neue Felder kommen dazu, die alte Fassung wird gesichert. `--einrichten` wiederholt das alle 6 Stunden. Von Hand: `php /boot/config/plugins/sysrix-vorlagen/sysrix-vorlagen.php` (`--probelauf` zeigt nur an). Für private Repositories nimmt das Skript das Token aus `docker login ghcr.io`, `GH_TOKEN` oder einmalig `--token=…`; es braucht Lesezugriff auf Repositories (classic `repo` bzw. Contents: read).
 
 Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellungen stehen in der Anleitung des jeweiligen Pakets.
 </details>
