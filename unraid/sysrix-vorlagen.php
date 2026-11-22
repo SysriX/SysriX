@@ -234,7 +234,7 @@ function isImage(string $file): bool {
 
 // =====================================================================================================
 [$TOKEN, $tokenSrc] = findToken();
-info($TOKEN !== '' ? "GitHub-Anmeldung: $tokenSrc" : 'Keine GitHub-Anmeldung gefunden – nur öffentliche Repositories (Name *_unraid).');
+info($TOKEN !== '' ? "GitHub-Anmeldung: $tokenSrc" : 'Keine GitHub-Anmeldung gefunden – nur öffentliche Repositories.');
 
 // ---------- Repositories ----------
 $repos = [];
@@ -251,16 +251,18 @@ if ($TOKEN !== '') {
     $addRepos($mine);
     $addRepos(apiList('https://api.github.com/orgs/' . OWNER . '/repos?type=all'));
 }
+$nAll = count($repos);
+$repos = array_filter($repos, fn($r, $n) => preg_match('/_unraid$/i', $n) === 1, ARRAY_FILTER_USE_BOTH);  // nur Unraid-Pakete
 ksort($repos, SORT_NATURAL | SORT_FLAG_CASE);
 $nPriv = count(array_filter($repos, fn($r) => !empty($r['private'])));
-info(sprintf('%d Repositories (%d privat) bei %s.', count($repos), $nPriv, OWNER));
+info(sprintf('%d Unraid-Repositories (*_unraid, %d privat) von %d bei %s.', count($repos), $nPriv, $nAll, OWNER));
 if ($TOKEN !== '' && $nPriv === 0) warn('Keine privaten Repositories sichtbar – hat das Token Lesezugriff auf Repositories (Scope „repo“ bzw. Contents: read)?');
 
 // ---------- Vorlagen holen ----------
 $templates = [];
 foreach ($repos as $name => $r) {
     if (!empty($r['archived'])) continue;
-    if ($TOKEN === '' && !str_ends_with($name, '_unraid')) continue;   // Abruf-Grenze ohne Anmeldung schonen
+    if (!preg_match('/_unraid$/i', $name)) continue;                  // nur Unraid-Pakete (keine HA-Integrationen, Karten …)
     $branch = $r['default_branch'] ?? 'main';
     $priv = !empty($r['private']);
     if (!$QUIET) echo "  $name … ";
