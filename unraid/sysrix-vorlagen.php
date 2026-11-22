@@ -17,9 +17,9 @@
  * /boot/config/plugins/sysrix-vorlagen/github-token oder aus dem „docker login ghcr.io“ (/root/.docker/config.json).
  * Das Token braucht Lesezugriff auf die Repositories (classic: „repo“, fine-grained: Contents: read).
  *
+ * Normalerweise über das User Script unraid/vorlagen.sh gestartet (Zeitplan und „Run Script“ in User Scripts).
  * Aufruf:
  *   php sysrix-vorlagen.php               abgleichen
- *   php sysrix-vorlagen.php --einrichten  abgleichen + alle 6 Stunden automatisch (Cron) + Symbole nach Neustart
  *   php sysrix-vorlagen.php --probelauf   nur anzeigen, was passieren würde
  *   php sysrix-vorlagen.php --token=XYZ   Token dauerhaft speichern (auf dem USB-Stick) und abgleichen
  *   php sysrix-vorlagen.php --symbole     nur zwischengespeicherte Symbole bereitstellen (ohne Netz, für den Start)
@@ -27,7 +27,6 @@
  */
 
 const OWNER    = 'SysriX';
-const SELF_URL = 'https://raw.githubusercontent.com/SysriX/SysriX/main/unraid/sysrix-vorlagen.php';
 
 $R = rtrim((string)getenv('SYSRIX_ROOT'), '/');       // nur zum Testen: anderes Wurzelverzeichnis
 define('BASE',            $R . '/boot/config/plugins/sysrix-vorlagen');
@@ -50,7 +49,6 @@ const UPSTREAM_FIELDS = ['Overview', 'Description', 'Category', 'Support', 'Proj
 $args    = array_slice($argv, 1);
 $DRY     = (bool)array_intersect($args, ['--probelauf', '--dry-run', '-n']);
 $QUIET   = (bool)array_intersect($args, ['--still', '--quiet', '-q']);
-$SETUP   = in_array('--einrichten', $args, true);
 $ICONS   = in_array('--symbole', $args, true);
 $TOKEN   = '';
 $changes = 0;
@@ -389,21 +387,18 @@ if (is_dir(DOCKER_ICON_DIR) && !$DRY) {
     }
 }
 
-// ---------- Einrichten: Cron + Symbole nach Neustart ----------
-if ($SETUP && !$DRY) {
-    $self = BASE . '/sysrix-vorlagen.php';
-    if (realpath(__FILE__) !== realpath($self)) @copy(__FILE__, $self);
-    $cron = "# SysriX-Vorlagen: alle 6 Stunden abgleichen (Skript holt sich vorher selbst neu)\n"
-          . "17 */6 * * * curl -fsS --max-time 60 " . SELF_URL . " -o $self.neu && php -l $self.neu >/dev/null 2>&1 && mv -f $self.neu $self; "
-          . "php $self --still >> /var/log/sysrix-vorlagen.log 2>&1\n";
-    file_put_contents(BASE . '/sysrix-vorlagen.cron', $cron);
-    if (is_executable('/usr/local/sbin/update_cron')) exec('/usr/local/sbin/update_cron');
-    info('Cron eingerichtet: alle 6 Stunden (' . BASE . '/sysrix-vorlagen.cron).');
-    $line = "php $self --symbole >/dev/null 2>&1 # sysrix-vorlagen";
+// ---------- Zeitplan läuft jetzt über User Scripts: Cron/go-Zeile der ersten Fassung entfernen ----------
+if (!$DRY) {
+    if (is_file(BASE . '/sysrix-vorlagen.cron')) {
+        @unlink(BASE . '/sysrix-vorlagen.cron');
+        if (is_executable('/usr/local/sbin/update_cron')) exec('/usr/local/sbin/update_cron');
+        info('Alten Cron-Eintrag entfernt (Zeitplan jetzt in User Scripts).');
+    }
     $go = is_file(GO_FILE) ? (string)file_get_contents(GO_FILE) : '';
-    if ($go !== '' && !str_contains($go, '# sysrix-vorlagen')) {
-        file_put_contents(GO_FILE, rtrim($go, "\n") . "\n$line\n");
-        info('Symbole nach Neustart: Zeile in ' . GO_FILE . ' ergänzt.');
+    if (str_contains($go, '# sysrix-vorlagen')) {
+        $go = preg_replace('/^.*# sysrix-vorlagen\R?/m', '', $go);
+        file_put_contents(GO_FILE, $go);
+        info('Alte Zeile in ' . GO_FILE . ' entfernt.');
     }
 }
 

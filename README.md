@@ -75,13 +75,13 @@
 <summary><b>Installieren in Unraid</b></summary>
 <br>
 
-Bis die Pakete offiziell in Community Applications stehen, einmal in der Unraid-Konsole ausführen:
+Bis die Pakete offiziell in Community Applications stehen: Plugin **User Scripts** installieren und einmal in der Unraid-Konsole ausführen:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/SysriX/SysriX/main/unraid/vorlagen.sh | bash -s -- --einrichten
+mkdir -p /boot/config/plugins/user.scripts/scripts/sysrix-vorlagen && curl -fsSL https://raw.githubusercontent.com/SysriX/SysriX/main/unraid/vorlagen.sh -o /boot/config/plugins/user.scripts/scripts/sysrix-vorlagen/script && bash /boot/config/plugins/user.scripts/scripts/sysrix-vorlagen/script
 ```
 
-Das holt die Vorlagen aller SysriX-Repositories (Ordner `templates/`) nach **Apps › Private** und als Benutzer-Vorlage nach **Docker › Container hinzufügen**. Vorhandene werden nur bei Änderungen aktualisiert – eigene Werte bleiben, neue Felder kommen dazu, die alte Fassung wird gesichert. `--einrichten` wiederholt das alle 6 Stunden. Von Hand: `php /boot/config/plugins/sysrix-vorlagen/sysrix-vorlagen.php` (`--probelauf` zeigt nur an). Für private Repositories nimmt das Skript das Token aus `docker login ghcr.io`, `GH_TOKEN` oder einmalig `--token=…`; es braucht Lesezugriff auf Repositories (classic `repo` bzw. Contents: read).
+Das legt das User Script **sysrix-vorlagen** an und führt es gleich aus: Es holt die Vorlagen aller SysriX-Repositories (Ordner `templates/`) nach **Apps › Private** und als Benutzer-Vorlage nach **Docker › Container hinzufügen**. Vorhandene werden nur bei Änderungen aktualisiert – eigene Werte bleiben, neue Felder kommen dazu, die alte Fassung wird gesichert. Zwischendurch aktualisieren: **Einstellungen › User Scripts › Run Script**; automatisch: dort einen Zeitplan wählen (z. B. Daily). „Run with arguments“ nimmt `--probelauf` (nur anzeigen). Für private Repositories nimmt das Skript das Token aus `docker login ghcr.io`, `GH_TOKEN` oder einmalig `--token=…`; es braucht Lesezugriff auf Repositories (classic `repo` bzw. Contents: read).
 
 Danach unter **Apps › Private** installieren. Voraussetzungen und Einstellungen stehen in der Anleitung des jeweiligen Pakets.
 </details>
